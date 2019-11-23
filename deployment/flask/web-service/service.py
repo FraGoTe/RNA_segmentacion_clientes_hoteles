@@ -83,9 +83,10 @@ def default():
 	with graph.as_default():
 		resultado = ""
 		score = loaded_model.predict(huesped)
-		print("\nFinal score: ", score)
+		score_norm = (score > 0.5)
+		score_norm = score_norm.astype(int)
+		print("\nFinal score: ", score_norm)
 		
-		resultado = score
 		"""
                 if np.argmax(score) == 0:
 			resultado += "Grupo I"
@@ -97,7 +98,8 @@ def default():
 			resultado += "Grupo IV"
 		print(score[0][np.argmax(score)], ' --> ', resultado)
 		"""
-		return resultado + ', score: ' + str(score[0])
+		#return resultado + ', score: ' + str(score[0])
+		return ', score: ' + str(score[0])
 
 # Run de application
 app.run(host='0.0.0.0',port=port)
