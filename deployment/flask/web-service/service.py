@@ -87,8 +87,10 @@ def default():
 		score_norm = score_norm.astype(int)
 		print("\nFinal score: ", score_norm)
 		
+		grupo = np.argmax(score_norm) + 1
+		
 		"""
-                if np.argmax(score) == 0:
+                if np.argmax(score_norm) == 0:
 			resultado += "Grupo I"
 		if np.argmax(score) == 1:
 			resultado += "Grupo II"
@@ -99,7 +101,7 @@ def default():
 		print(score[0][np.argmax(score)], ' --> ', resultado)
 		"""
 		#return resultado + ', score: ' + str(score[0])
-		return 'score: ' + str(score_norm[0])
+		return 'Grupo: '+ str(grupo) + ', Score: ' + str(score_norm[0])
 
 # Run de application
 app.run(host='0.0.0.0',port=port)
