@@ -101,7 +101,7 @@ def default():
 		print(score[0][np.argmax(score)], ' --> ', resultado)
 		"""
 		#return resultado + ', score: ' + str(score[0])
-		return 'Grupo: '+ str(grupo) + ', Score: ' + str(score_norm[0])
+		return ' Score: ' + str(score_norm[0]) + ' -- > Grupo '+ str(grupo)
 
 # Run de application
 app.run(host='0.0.0.0',port=port)
