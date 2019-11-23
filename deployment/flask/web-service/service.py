@@ -99,7 +99,7 @@ def default():
 		print(score[0][np.argmax(score)], ' --> ', resultado)
 		"""
 		#return resultado + ', score: ' + str(score[0])
-		return ', score: ' + str(score_norm)
+		return 'score: ' + str(score_norm[0])
 
 # Run de application
 app.run(host='0.0.0.0',port=port)
