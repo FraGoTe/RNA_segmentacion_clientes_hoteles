@@ -85,17 +85,13 @@ def default():
 		score = loaded_model.predict(huesped)
 		print("\nFinal score: ", score)
 		
-                if np.argmax(score) == 0: 
-			print(score[0][np.argmax(score)], ' --> Grupo I')
+                if np.argmax(score) == 0: print(score[0][np.argmax(score)], ' --> Grupo I')
 			resultado += "Grupo I"
-		if np.argmax(score) == 1: 
-			print(score[0][np.argmax(score)], ' --> Grupo II')
+		if np.argmax(score) == 1: print(score[0][np.argmax(score)], ' --> Grupo II')
 			resultado += "Grupo II"
-		if np.argmax(score) == 2: 
-			print(score[0][np.argmax(score)], ' --> Grupo III')
+		if np.argmax(score) == 2: print(score[0][np.argmax(score)], ' --> Grupo III')
 			resultado += "Grupo III"
-		if np.argmax(score) == 3: 
-			print(score[0][np.argmax(score)], ' --> Grupo IV')
+		if np.argmax(score) == 3: print(score[0][np.argmax(score)], ' --> Grupo IV')
 			resultado += "Grupo IV"
 		
 		return resultado + ', score: ' + str(score[0])
