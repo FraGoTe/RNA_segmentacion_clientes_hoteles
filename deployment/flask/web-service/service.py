@@ -89,6 +89,8 @@ def default():
 		if np.argmax(score) == 1: resultado += "Grupo II"
 		if np.argmax(score) == 2: resultado += "Grupo III"
 		if np.argmax(score) == 3: resultado += "Grupo IV"
+			
+		print(score[0][np.argmax(score)], ' --> ', resultado)
 		
 		return resultado + ', score: ' + str(score[0])
 
