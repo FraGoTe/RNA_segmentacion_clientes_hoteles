@@ -1,7 +1,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=ISO 8859-1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Predictor de Diabetes</title>
+  <title>Segmentacion de Huespedes</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
@@ -11,80 +11,96 @@
 <body ng-app="myApp" ng-cloak style="background-color: #efefef" ng-controller="myCtrl" layout="column">
   <md-toolbar>
     <div class="md-toolbar-tools">
-      <span>**** Predictor de Diabetes ****</span>
+      <span>**** Segmentacion de Clientes ****</span>
     </div>
   </md-toolbar>
   <md-content flex style="width:420">
     <md-card>
       <md-card-content>
-        <p><em>Ingrese los datos del paciente:</em></p>
+        <p><em>Ingrese los datos del huesped:</em></p>
        </md-card-content>
     </md-card>
     <md-card>
       <md-card-content>
 
         <div layout="row" layout-align="space-between center">
-          <span>Embarazos</span>
-          <md-slider-container> {: data.Embarazos :}&nbsp;
-            <md-slider aria-label="Slider" min="0" max="20" ng-model="data.Embarazos" id="emb-slider"></md-slider>
+          <span>Edad</span>
+          <md-slider-container> {: data.Edad :}&nbsp;
+            <md-slider aria-label="Slider" min="20" max="80" ng-model="data.Edad" id="edad-slider"></md-slider>
           </md-slider-container>
         </div>
 
 	<div layout="row" layout-align="space-between center">
+          <span>Actividad Laboral</span>
+          <md-select ng-model="data.Actividad_Laboral" placeholder="Select">
+            <md-option value="Empleado">Empleado</md-option>
+            <md-option value="Empresario">Empresario</md-option>
+            <md-option value="Estudiante">Estudiante</md-option>
+            <md-option value="Gerente">Gerente</md-option>
+            <md-option value="Independiente">Independiente</md-option>
+            <md-option value="Jubilado">Jubilado</md-option>
+            <md-option value="Tecnico">Tecnico</md-option>
+          </md-select>
+        </div>
+	      
+	<div layout="row" layout-align="space-between center">
+          <span>Nivel SocioEconomico</span>
+          <md-select ng-model="data.Nivel_Socioeconomico" placeholder="Select">
+            <md-option value="Alto">Alto</md-option>
+            <md-option value="Media">Media</md-option>
+          </md-select>
+        </div>
+	      
+	<div layout="row" layout-align="space-between center">
+          <span>Estado Civil</span>
+          <md-select ng-model="data.Estado_Civil" placeholder="Select">
+            <md-option value="Casado">Casado</md-option>
+            <md-option value="Divorciado">Divorciado</md-option>
+	    <md-option value="Soltero">Soltero</md-option>
+          </md-select>
+        </div>
+	
+	<div layout="row" layout-align="space-between center">
+          <span>Estado Civil</span>
+          <md-select ng-model="data.Nivel_Educacion" placeholder="Select">
+            <md-option value="Primaria">Primaria</md-option>
+            <md-option value="Secundaria">Secundaria</md-option>
+	    <md-option value="Tecnico">Tecnico</md-option>
+	    <md-option value="Universitario">Universitario</md-option>
+          </md-select>
+        </div>	
+	      
+	<div style="margin-bottom:32px" layout="row" layout-align="space-between center">
+          <span>Viaja Solo</span>
+          <md-radio-group ng-model="data.Viaja_Solo" layout="row">
+            <md-radio-button value="No">No</md-radio-button>
+            <md-radio-button value="Si">Si</md-radio-button>
+          </md-radio-group>
+        </div>
+	  
+	<div layout="row" layout-align="space-between center">
+          <span>Medio Reserva</span>
+          <md-select ng-model="data.Medio_Reserva" placeholder="Select">
+            <md-option value="Email">Email</md-option>
+            <md-option value="Telefono">Telefono</md-option>
+	    <md-option value="Web">Web</md-option>
+          </md-select>
+        </div>	
+	     
+	<div layout="row" layout-align="space-between center">
           <span>Glucosa</span>
-          <md-slider-container> {: data.Glucosa :}&nbsp;
-            <md-slider aria-label="Slider" min="0" max="200" ng-model="data.Glucosa" id="glu-slider"></md-slider>
+          <md-slider-container> {: data.Registros_Hotel :}&nbsp;
+            <md-slider aria-label="Slider" min="1" max="35" ng-model="data.Registros_Hotel" id="reghotel-slider"></md-slider>
           </md-slider-container>
         </div>
-      
-
-
-        <div layout="row" layout-align="space-between center">
-          <span>Presion</span>
-          <md-slider-container> {: data.Presion :}&nbsp;
-            <md-slider aria-label="Slider" min="0" max="150" ng-model="data.Presion" id="pre-slider"></md-slider>
-          </md-slider-container>
+	      
+	<div style="margin-bottom:32px" layout="row" layout-align="space-between center">
+          <span>Tipo Viaje</span>
+          <md-radio-group ng-model="data.Tipo_Viaje" layout="row">
+            <md-radio-button value="Negocio">Negocio</md-radio-button>
+            <md-radio-button value="Placer">Placer</md-radio-button>
+          </md-radio-group>
         </div>
-
-        <div layout="row" layout-align="space-between center">
-          <span>EspesorPiel</span>
-          <md-slider-container> {: data.EspesorPiel :}&nbsp;
-            <md-slider aria-label="Slider" min="0" max="100" ng-model="data.EspesorPiel" id="ep-slider"></md-slider>
-          </md-slider-container>
-        </div>
-
- 	<div layout="row" layout-align="space-between center">
-          <span>Insulina</span>
-          <md-slider-container> {: data.Insulina :}&nbsp;
-            <md-slider aria-label="Slider" min="0" max="850" ng-model="data.Insulina" id="ins-slider"></md-slider>
-          </md-slider-container>
-        </div>
-
- 
-
-
-        <div layout="row" layout-align="space-between center">
-          <span>IMC</span>
-          <md-slider-container> {: data.IMC :}&nbsp;
-            <md-slider aria-label="Slider" min="15" max="70" ng-model="data.IMC" id="imc-slider"></md-slider>
-          </md-slider-container>
-        </div>
-
-        <div layout="row" layout-align="space-between center">
-          <span>DiabetesFamiliar</span>
-          <md-slider-container> {: data.DiabetesFamiliar :}&nbsp;
-            <md-slider aria-label="Slider" min="0" max="2.5" ng-model="data.DiabetesFamiliar" id="df-slider"></md-slider>
-          </md-slider-container>
-        </div>
-
- 	<div layout="row" layout-align="space-between center">
-          <span>Edad</span>
-          <md-slider-container> {: data.Edad :}&nbsp;
-            <md-slider aria-label="Slider" min="18" max="85" ng-model="data.Edad" id="edad-slider"></md-slider>
-          </md-slider-container>
-        </div>
-
-
 
       </md-card-content>
 
@@ -96,7 +112,7 @@
     <md-card>
       <md-card-content>
         <div layout="row" layout-align="space-between center">
-          <span style="font-weight:bold">Predicción:</span>
+          <span style="font-weight:bold">PredicciÃ³n:</span>
           <span style="color:blue;font-weight:bold">{: result :}</span>
         </div>
       </md-card-content>
