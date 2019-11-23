@@ -85,6 +85,8 @@ def default():
 		score = loaded_model.predict(huesped)
 		print("\nFinal score: ", score)
 		
+		resultado = score
+		"""
                 if np.argmax(score) == 0:
 			resultado += "Grupo I"
 		if np.argmax(score) == 1:
@@ -93,9 +95,8 @@ def default():
 			resultado += "Grupo III"
 		if np.argmax(score) == 3:
 			resultado += "Grupo IV"
-			
 		print(score[0][np.argmax(score)], ' --> ', resultado)
-		
+		"""
 		return resultado + ', score: ' + str(score[0])
 
 # Run de application
