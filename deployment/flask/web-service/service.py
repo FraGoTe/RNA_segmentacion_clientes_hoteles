@@ -8,7 +8,7 @@ import numpy as np
 
 # On IBM Cloud Cloud Foundry, get the port number from the environment variable PORT
 # When running this app on the local machine, default the port to 6000
-port = int(os.getenv('PORT', 6000))
+port = int(os.getenv('PORT', 8033))
 print ("Port recognized: ", port)
 
 #Initialize the application service
